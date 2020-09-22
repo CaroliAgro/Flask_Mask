@@ -31,8 +31,8 @@ Esse app desenvolvido em Flask, utilizou um modelo para prever a contagem de gr�
 - Digite `pip install -r requirements.txt `
 
 # :computer: Instalação do aplicativo
-
-- Execute o arquivo app.py através de: `python server.py`.
+- Inclua os arquivos mrcnn e logs.
+- Execute o arquivo server.py através de: `python server.py`.
 
 <br />
 
