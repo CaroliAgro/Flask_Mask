@@ -25,7 +25,7 @@ Esse app desenvolvido em Flask, utilizou um modelo para prever a contagem de gr√
 
 <br />
 
-:house_with_garden: Criando ambiente virtual
+# :house_with_garden: Criando ambiente virtual
 - Crie um ambiente virtual com a linguagem python 3.6.
 - Digite `pip install keras`.
 - Digite `pip install -r requirements.txt `
