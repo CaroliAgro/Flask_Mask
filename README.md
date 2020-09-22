@@ -5,7 +5,7 @@
 
 <br>
 
-# :pencil2: Sumário
+# :coffee: Sumário
 
 - Sobre
 - Criando ambiente virtual
@@ -30,7 +30,7 @@ Esse app desenvolvido em Flask, utilizou um modelo para prever a contagem de gr�
 - Digite `pip install keras`.
 - Digite `pip install -r requirements.txt `
 
-# :space_invader: Instalação do aplicativo
+# :computer: Instalação do aplicativo
 
 - Execute o arquivo app.py através de: `python server.py`.
 
