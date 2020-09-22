@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Deep Learning</title>
+
+    <script src="{{url_for('static', filename='jquery-1.11.3.min.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <h4>Deep Learning para contagem de grãos de café</h4>
+    <main>
+        <form action="handle_form" method="post" enctype="multipart/form-data">
+            <div class="input-and-button form-group">
+                <input class="form-control" type="file" name="file" id="imgInp">
+                <button class="btn btn-secondary btn-lg btn-block" type="submit" value="Upload"
+                    onclick="setLoaderVisible()" class="visible" id="btnSubmit">Enviar</button>
+            </div>
+
+            <div class="loader-and-image">
+                <img id="blah" src="#" alt="your image" class="hide" />
+                <div id="loader" class="hide"></div>
+            </div>
+        </form>
+        {% if image %}
+        <img src="{{image}}" class="transformed-image" />
+        <h4> Número de grãos cereja: {{n}} </h4>
+        {% endif %}
+    </main>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imageCanvas = document.getElementById('blah');
+                    imageCanvas.src = e.target.result;
+
+                    imageCanvas.classList.add('visible');
+                    imageCanvas.classList.remove('hide');
+
+                    loaderImageContainer = document.getElementsByClassName(
+                        'loader-and-image'
+                    )[0];
+                    loaderImageContainer.style.height = "150px";
+
+                    transformedImage = document.getElementsByClassName(
+                        'transformed-image'
+                    )[0];
+                    transformedImage.style.height = "0px";
+                }
+
+                reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+        }
+
+        $("#imgInp").change(function () {
+            readURL(this);
+        });
+        function setLoaderVisible() {
+            var loader = document.getElementById('loader');
+            loader.classList.remove('hide');
+            loader.classList.add('visible');
+
+            var btnSubmit = document.getElementById('btnSubmit');
+            btnSubmit.classList.remove('visible');
+            btnSubmit.classList.add('hide');
+
+            imageCanvas = document.getElementById('blah');
+            imageCanvas.classList.add('low-opacity');
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  margin: 32px 0px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+  width: 100%;
+}
+
+main form {
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main form .input-and-button {
+  display: flex;
+  flex-direction: row;
+}
+
+main form .input-and-button button {
+  margin-left: 10px;
+  padding: 2px 4px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+main .transformed-image {
+  width: 150px;
+  height: 150px;
+  margin-left: 550px;
+}
+
+.loader-and-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 150px;
+  height: 0;
+  margin-top: 20px;
+}
+
+#loader {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.loader-and-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.low-opacity {
+  opacity: 0.4;
+}
+
+h4 {
+  text-align: center;
+  color: rgb(46, 45, 45);
+}
